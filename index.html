@@ -3,214 +3,318 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TFM - Victimización y financiación ilícita</title>
+
+<title>TFM - Patricia Suárez Algora</title>
 
 <style>
 :root{
-    --primary:#1f3b73;
-    --secondary:#c9a227;
-    --bg:#0f1724;
-    --card:#162033;
-    --text:#e9eef7;
-    --muted:#b6c0d1;
+    --blue:#00d4ff;
+    --green:#00ff85;
+    --yellow:#ffd60a;
+    --bg:#05070f;
+    --card:rgba(255,255,255,0.06);
+    --text:#eaf2ff;
+    --muted:#b9c6dd;
 }
 
 body{
     margin:0;
-    font-family: "Georgia", "Times New Roman", serif;
-    background: var(--bg);
-    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: radial-gradient(circle at top, #0b1224, var(--bg));
+    color:var(--text);
 }
 
-/* CABECERA */
-header{
+/* Fondo dinámico */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background: linear-gradient(120deg, var(--blue), var(--green), var(--yellow));
+    opacity:0.08;
+    animation: move 12s infinite alternate;
+    z-index:-1;
+}
+
+@keyframes move{
+    0%{filter:hue-rotate(0deg);}
+    100%{filter:hue-rotate(120deg);}
+}
+
+/* HEADER */
+.hero{
     text-align:center;
     padding:60px 20px 30px;
-    background: linear-gradient(135deg, #12213a, #0f1724);
-    border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
-header h1{
-    margin:0;
-    font-size:2.2rem;
-    color: var(--secondary);
-    letter-spacing:0.5px;
+.hero h1{
+    font-size:2.6rem;
+    background: linear-gradient(90deg,var(--blue),var(--green),var(--yellow));
+    -webkit-background-clip:text;
+    color:transparent;
+    text-shadow:0 0 20px rgba(0,255,200,0.2);
 }
 
-header p{
+.hero h2{
+    font-weight:400;
+    color:var(--muted);
     max-width:900px;
-    margin:15px auto 0;
-    color: var(--muted);
-    font-size:1.05rem;
-    line-height:1.6;
+    margin:10px auto;
 }
 
-.author{
-    margin-top:18px;
+.badge{
+    display:inline-block;
+    margin-top:15px;
+    padding:8px 16px;
+    border-radius:50px;
+    background:linear-gradient(90deg,var(--green),var(--blue));
     font-weight:bold;
-    color:#ffffff;
 }
 
-/* MENÚ */
-nav{
+/* MENU */
+.menu{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
     gap:10px;
-    padding:20px;
+    margin:20px;
 }
 
-nav button{
-    background:transparent;
-    border:1px solid rgba(255,255,255,0.2);
-    color:var(--text);
-    padding:10px 14px;
-    border-radius:8px;
+.btn{
+    padding:12px 14px;
+    border:none;
+    border-radius:10px;
+    background:rgba(255,255,255,0.08);
+    color:white;
     cursor:pointer;
     transition:0.3s;
 }
 
-nav button:hover{
-    background:var(--primary);
-    border-color:var(--primary);
+.btn:hover{
+    transform:scale(1.08);
+    background:linear-gradient(90deg,var(--blue),var(--green));
 }
 
-/* CONTENIDO */
-.container{
-    max-width:1000px;
-    margin:auto;
-    padding:20px;
-}
-
+/* SECCIONES */
 .section{
     display:none;
-    background: var(--card);
-    padding:25px;
-    border-radius:10px;
-    margin-bottom:20px;
+    max-width:1000px;
+    margin:20px auto;
+    padding:22px;
+    background:var(--card);
+    border-radius:18px;
+    backdrop-filter: blur(10px);
     border:1px solid rgba(255,255,255,0.08);
+    animation: fade .4s ease;
 }
 
-.section.active{
-    display:block;
+.section.active{display:block;}
+
+@keyframes fade{
+    from{opacity:0; transform:translateY(10px);}
+    to{opacity:1; transform:translateY(0);}
 }
 
-h2{
-    color: var(--secondary);
-    margin-top:0;
+h3{
+    color:var(--green);
     border-bottom:1px solid rgba(255,255,255,0.15);
     padding-bottom:8px;
 }
 
-p, li{
-    color:var(--muted);
-    line-height:1.7;
-}
-
 /* CAJAS */
 .box{
-    margin-top:15px;
-    padding:15px;
-    border-left:4px solid var(--secondary);
-    background:rgba(255,255,255,0.03);
+    margin-top:12px;
+    padding:14px;
+    border-left:4px solid var(--yellow);
+    background:rgba(255,255,255,0.05);
+    border-radius:10px;
 }
 
-/* BOTÓN ACTIVO */
-.active-btn{
-    background:var(--primary);
-    border-color:var(--primary);
+/* BLOQUE PROFESIONAL DE CONTINUIDAD */
+.next{
+    margin-top:12px;
+    padding:12px;
+    border-left:4px solid var(--blue);
+    background:rgba(0,212,255,0.08);
+    border-radius:10px;
+    font-size:0.95rem;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:12px;
+}
+
+.card{
+    padding:14px;
+    border-radius:14px;
+    background:rgba(255,255,255,0.05);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border:1px solid var(--green);
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>TFM</h1>
-    <p>
-        Victimización indirecta y secundaria derivada de la financiación ilícita del terrorismo yihadista: 
-        análisis victimológico del impacto económico, social y digital con apoyo de OSINT
-    </p>
-    <div class="author">Patricia Suárez Algora</div>
-</header>
-
-<nav>
-    <button onclick="show('i', this)">Inicio</button>
-    <button onclick="show('p', this)">Planteamiento</button>
-    <button onclick="show('m', this)">Marco teórico</button>
-    <button onclick="show('f', this)">Financiación</button>
-    <button onclick="show('v', this)">Víctimas</button>
-    <button onclick="show('o', this)">OSINT</button>
-    <button onclick="show('c', this)">Conclusiones</button>
-</nav>
-
-<div class="container">
-
-<section id="i" class="section active">
-<h2>Idea central</h2>
-<p>
-El terrorismo no solo genera víctimas directas. La financiación ilícita amplifica daños
-económicos, sociales y digitales que afectan a comunidades enteras.
-</p>
-<div class="box">
-La víctima es el eje del análisis; la financiación ilícita es el mecanismo.
+<div class="hero">
+    <h1>TFM - Criminología Digital</h1>
+    <h2>Financiación ilícita del terrorismo y victimización en entornos digitales mediante OSINT</h2>
+    <div class="badge">Patricia Suárez Algora</div>
 </div>
-</section>
 
-<section id="p" class="section">
-<h2>Planteamiento</h2>
-<p>
-Se estudia cómo la financiación ilícita del terrorismo impacta más allá del atentado,
-generando victimización secundaria y efectos prolongados.
-</p>
-</section>
+<div class="menu">
+<button class="btn" onclick="show('i')">Inicio</button>
+<button class="btn" onclick="show('p1')">1. Planteamiento</button>
+<button class="btn" onclick="show('p2')">2. Marco teórico</button>
+<button class="btn" onclick="show('p3')">3. Financiación</button>
+<button class="btn" onclick="show('p4')">4. Víctimas</button>
+<button class="btn" onclick="show('p5')">5. Digital</button>
+<button class="btn" onclick="show('p6')">6. OSINT</button>
+<button class="btn" onclick="show('p7')">7. Conclusión</button>
+</div>
 
-<section id="m" class="section">
-<h2>Marco teórico</h2>
+<!-- INICIO -->
+<div id="i" class="section active">
+<h3>Idea central</h3>
+<p>La financiación ilícita estructura el terrorismo moderno y amplifica la victimización más allá del ataque físico.</p>
+
+<div class="box">
+<strong>Resumen:</strong> El foco está en el impacto criminológico global del sistema financiero ilícito.
+</div>
+
+<div class="next">
+<strong>Líneas futuras:</strong>
+Analizar cómo evoluciona la financiación digital hacia sistemas descentralizados y su impacto en la victimología.
+</div>
+</div>
+
+<!-- 1 -->
+<div id="p1" class="section">
+<h3>1. Planteamiento</h3>
+
+<div class="grid">
+<div class="card">El daño no es solo físico</div>
+<div class="card">Se expande digitalmente</div>
+<div class="card">La financiación es el eje invisible</div>
+</div>
+
+<div class="box">
+<strong>Resumen:</strong> Se estudia la expansión del daño terrorista más allá del evento.
+</div>
+
+<div class="next">
+<strong>Siguiente paso:</strong> profundizar en cómo la estructura financiera condiciona la tipología de víctimas.
+</div>
+</div>
+
+<!-- 2 -->
+<div id="p2" class="section">
+<h3>2. Marco teórico</h3>
+
 <ul>
-<li>Victimización directa e indirecta</li>
+<li>Victimización directa, indirecta y secundaria</li>
+<li>Revictimización digital</li>
 <li>Victimología del terrorismo</li>
-<li>Revictimización institucional</li>
-<li>Impacto social y digital</li>
 </ul>
-</section>
 
-<section id="f" class="section">
-<h2>Financiación ilícita</h2>
-<ul>
-<li>Criptoactivos</li>
-<li>Redes informales</li>
-<li>Transferencias digitales opacas</li>
-</ul>
-</section>
+<div class="box">
+<strong>Resumen:</strong> Base conceptual de la victimización moderna.
+</div>
 
-<section id="v" class="section">
-<h2>Impacto en víctimas</h2>
-<p>Efectos económicos, psicológicos y sociales derivados del terrorismo.</p>
-</section>
+<div class="next">
+<strong>Desarrollo:</strong> integrar modelos de victimología digital y exposición en redes sociales.
+</div>
+</div>
 
-<section id="o" class="section">
-<h2>OSINT</h2>
-<p>Herramienta de análisis para identificar huellas digitales y patrones de riesgo.</p>
-</section>
+<!-- 3 -->
+<div id="p3" class="section">
+<h3>3. Financiación ilícita</h3>
 
-<section id="c" class="section">
-<h2>Conclusiones</h2>
-<p>
-El impacto del terrorismo se amplifica en el entorno digital y financiero,
-y la víctima debe ser el centro del análisis criminológico.
-</p>
-</section>
+<p>Criptoactivos, redes P2P y estructuras descentralizadas permiten nuevos modelos de financiación opaca.</p>
 
+<div class="box">
+<strong>Resumen:</strong> La tecnología redefine la financiación del terrorismo.
+</div>
+
+<div class="next">
+<strong>Ampliación:</strong> comparar TRON, Bitcoin y stablecoins en términos de trazabilidad criminológica.
+</div>
+</div>
+
+<!-- 4 -->
+<div id="p4" class="section">
+<h3>4. Víctimas</h3>
+
+<div class="grid">
+<div class="card">Impacto emocional prolongado</div>
+<div class="card">Impacto social comunitario</div>
+<div class="card">Costes económicos indirectos</div>
+</div>
+
+<div class="box">
+<strong>Resumen:</strong> La victimización se extiende más allá del acto terrorista.
+</div>
+
+<div class="next">
+<strong>Investigación futura:</strong> estudiar victimización secundaria institucional y mediática.
+</div>
+</div>
+
+<!-- 5 -->
+<div id="p5" class="section">
+<h3>5. Dimensión digital</h3>
+
+<p>Las redes sociales amplifican la exposición y pueden generar revictimización constante.</p>
+
+<div class="box">
+<strong>Resumen:</strong> El entorno digital es un multiplicador del daño.
+</div>
+
+<div class="next">
+<strong>Línea de análisis:</strong> estudio de huella digital de víctimas en contextos de crisis terrorista.
+</div>
+</div>
+
+<!-- 6 -->
+<div id="p6" class="section">
+<h3>6. OSINT</h3>
+
+<p>OSINT permite identificar patrones, exposición y redes de financiación.</p>
+
+<div class="box">
+<strong>Resumen:</strong> herramienta clave de inteligencia abierta aplicada a criminología.
+</div>
+
+<div class="next">
+<strong>Futuro:</strong> integración OSINT + análisis on-chain + SNA como estándar metodológico.
+</div>
+</div>
+
+<!-- 7 -->
+<div id="p7" class="section">
+<h3>7. Conclusión</h3>
+
+<p>El reto no es detectar el fenómeno, sino convertir la evidencia digital en prueba jurídica válida.</p>
+
+<div class="box">
+<strong>Resumen final:</strong> existe una brecha entre tecnología y sistema jurídico.
+</div>
+
+<div class="next">
+<strong>Proyección:</strong> reforma probatoria en evidencia blockchain y capacitación judicial en OSINT.
+</div>
 </div>
 
 <script>
-function show(id, btn){
-    document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-
-    document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active-btn'));
-    btn.classList.add('active-btn');
+function show(id){
+document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
 }
 </script>
 
