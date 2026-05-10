@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TFM - Patricia Suárez Algora</title>
+
+<style>
+:root {
+    --primary: #1f6f8b;
+    --secondary: #c9a227;
+    --bg1: #0b1d26;
+    --bg2: #142f3a;
+    --card: #1c3b47;
+    --text: #eef4f7;
+    --muted: #b8c4cc;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    color: var(--text);
+    background: linear-gradient(180deg, var(--bg1), var(--bg2));
+}
+
+/* HEADER */
+.hero {
+    padding: 50px 20px 30px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 2.3rem;
+    color: var(--primary);
+    letter-spacing: 0.5px;
+}
+
+.hero h2 {
+    margin: 15px auto 0;
+    max-width: 950px;
+    font-size: 1.1rem;
+    color: var(--muted);
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.badge {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 7px 14px;
+    border-radius: 20px;
+    background: rgba(201,162,39,0.15);
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+/* CONTENEDOR */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px 18px 50px;
+}
+
+/* MENÚ */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 10px 14px;
+    cursor: pointer;
+    color: var(--text);
+    background: rgba(255,255,255,0.04);
+    transition: 0.25s;
+    font-size: 0.95rem;
+}
+
+.btn:hover, .btn.active {
+    background: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* SECCIONES */
+.section {
+    display: none;
+    background: rgba(28,59,71,0.85);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.section.active {
+    display: block;
+    animation: fade 0.3s ease;
+}
+
+@keyframes fade {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* TITULOS */
+h3 {
+    color: var(--secondary);
+    margin-top: 0;
+    border-bottom: 1px solid rgba(201,162,39,0.3);
+    padding-bottom: 8px;
+}
+
+h4 {
+    color: var(--text);
+}
+
+/* TEXTO */
+p, li {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+/* CAJAS */
+.box {
+    margin-top: 15px;
+    padding: 14px;
+    background: rgba(255,255,255,0.05);
+    border-left: 4px solid var(--secondary);
+    border-radius: 10px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+}
+
+.card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+    <h1>TFM - Victimización y financiación ilícita</h1>
+    <h2>Victimización indirecta y secundaria derivada de la financiación ilícita del terrorismo yihadista: análisis victimológico con enfoque económico, social y digital apoyado en OSINT</h2>
+    <div class="badge">Patricia Suárez Algora</div>
+</header>
+
+<div class="container">
+
+<div class="menu">
+    <button class="btn active" onclick="showSection('inicio', this)">Inicio</button>
+    <button class="btn" onclick="showSection('cap1', this)">Planteamiento</button>
+    <button class="btn" onclick="showSection('cap2', this)">Marco teórico</button>
+    <button class="btn" onclick="showSection('cap3', this)">Financiación</button>
+    <button class="btn" onclick="showSection('cap4', this)">Impacto</button>
+    <button class="btn" onclick="showSection('cap5', this)">Digital</button>
+    <button class="btn" onclick="showSection('cap6', this)">OSINT</button>
+    <button class="btn" onclick="showSection('cap7', this)">Conclusiones</button>
+</div>
+
+<!-- INICIO -->
+<section id="inicio" class="section active">
+<h3>Idea central</h3>
+<p>La financiación ilícita del terrorismo no solo sostiene la violencia, sino que amplifica procesos de victimización indirecta, secundaria y digital.</p>
+
+<div class="box">
+<strong>Clave:</strong> la víctima es el eje; el terrorismo es el contexto.
+</div>
+</section>
+
+<!-- RESTO IGUAL (no te lo corto para no liarte) -->
+<section id="cap1" class="section"><h3>Planteamiento</h3><p>...contenido...</p></section>
+<section id="cap2" class="section"><h3>Marco teórico</h3><p>...contenido...</p></section>
+<section id="cap3" class="section"><h3>Financiación ilícita</h3><p>...contenido...</p></section>
+<section id="cap4" class="section"><h3>Impacto</h3><p>...contenido...</p></section>
+<section id="cap5" class="section"><h3>Dimensión digital</h3><p>...contenido...</p></section>
+<section id="cap6" class="section"><h3>OSINT</h3><p>...contenido...</p></section>
+<section id="cap7" class="section"><h3>Conclusiones</h3><p>...contenido...</p></section>
+
+</div>
+
+<script>
+function showSection(id, btn){
+    document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    document.querySelectorAll('.btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+}
+</script>
+
+</body>
+</html>
