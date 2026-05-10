@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TFM - Patricia Suárez Algora</title>
+    <style>
+        :root {
+            --primary: #4cc9f0;
+            --secondary: #ffd60a;
+            --bg1: #0a1428;
+            --bg2: #1a2338;
+            --card: #18233a;
+            --text: #e8eefc;
+            --muted: #a8b3cf;
+        }
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            color: var(--text);
+            background: radial-gradient(circle at top, #12203d 0%, var(--bg1) 45%, #070d1a 100%);
+        }
+        .hero {
+            padding: 48px 20px 28px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(76,201,240,.12), rgba(255,214,10,.06));
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+        .hero h1 {
+            margin: 0;
+            font-size: 2.4rem;
+            color: var(--primary);
+        }
+        .hero h2 {
+            margin: 12px auto 0;
+            max-width: 980px;
+            font-size: 1.15rem;
+            color: var(--text);
+            font-weight: 500;
+            line-height: 1.5;
+        }
+        .badge {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(255,214,10,.12);
+            color: var(--secondary);
+            font-weight: 700;
+            letter-spacing: .03em;
+        }
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 26px 18px 50px;
+        }
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 22px;
+        }
+        .btn {
+            border: 0;
+            border-radius: 12px;
+            padding: 13px 18px;
+            cursor: pointer;
+            color: white;
+            background: #31415f;
+            transition: .25s ease;
+            font-size: 1rem;
+        }
+        .btn:hover, .btn.active {
+            transform: translateY(-3px);
+            background: var(--primary);
+            box-shadow: 0 12px 24px rgba(76,201,240,.18);
+        }
+        .section {
+            display: none;
+            background: rgba(24,35,58,.95);
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 18px;
+            padding: 26px;
+            margin-bottom: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.25);
+        }
+        .section.active { display: block; animation: fade .35s ease; }
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h3 {
+            color: var(--primary);
+            margin-top: 0;
+            border-bottom: 2px solid rgba(76,201,240,.35);
+            padding-bottom: 10px;
+        }
+        h4 {
+            color: #d7e3ff;
+            margin: 18px 0 8px;
+        }
+        p, li {
+            color: var(--muted);
+            line-height: 1.65;
+            font-size: 1.02rem;
+        }
+        .box {
+            margin-top: 14px;
+            padding: 14px 16px;
+            background: rgba(76,201,240,.08);
+            border-left: 5px solid var(--secondary);
+            border-radius: 12px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 14px;
+        }
+        .card {
+            background: rgba(255,255,255,.03);
+            border: 1px solid rgba(255,255,255,.07);
+            border-radius: 14px;
+            padding: 16px;
+        }
+        .author {
+            color: var(--secondary);
+            font-weight: 700;
+            margin-top: 12px;
+            font-size: 1.1rem;
+            letter-spacing: .04em;
+        }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <h1>TFM - Victimización y financiación ilícita</h1>
+    <h2>Victimización indirecta y secundaria derivada de la financiación ilícita del terrorismo yihadista: un análisis victimológico sobre impacto económico, social y digital con apoyo de OSINT</h2>
+    <div class="badge">Patricia Suárez Algora</div>
+</header>
+
+<div class="container">
+    <div class="menu">
+        <button class="btn active" onclick="showSection('inicio', this)">Inicio</button>
+        <button class="btn" onclick="showSection('cap1', this)">1. Planteamiento</button>
+        <button class="btn" onclick="showSection('cap2', this)">2. Marco teórico</button>
+        <button class="btn" onclick="showSection('cap3', this)">3. Financiación ilícita</button>
+        <button class="btn" onclick="showSection('cap4', this)">4. Impacto en víctimas</button>
+        <button class="btn" onclick="showSection('cap5', this)">5. Dimensión digital</button>
+        <button class="btn" onclick="showSection('cap6', this)">6. OSINT</button>
+        <button class="btn" onclick="showSection('cap7', this)">7. Conclusiones</button>
+    </div>
+
+    <section id="inicio" class="section active">
+        <h3>Idea central del TFM</h3>
+        <p>Este trabajo estudia cómo la financiación ilícita del terrorismo yihadista genera daños que van más allá del atentado, produciendo victimización indirecta, secundaria y formas de revictimización económica, social y digital.</p>
+        <div class="box">
+            <strong>Clave del enfoque:</strong> la víctima es el centro del análisis; el terrorismo es el contexto criminológico y OSINT/PBC son herramientas de apoyo.
+        </div>
+    </section>
+
+    <section id="cap1" class="section">
+        <h3>1. Planteamiento del problema</h3>
+        <div class="grid">
+            <div class="card">
+                <h4>Qué estudiar</h4>
+                <p>Cómo la financiación ilícita del terrorismo afecta a víctimas y familiares, incluso cuando no son el objetivo inmediato del ataque.</p>
+            </div>
+            <div class="card">
+                <h4>Por qué importa</h4>
+                <p>Porque el daño terrorista se expande: pérdidas económicas, trauma, exposición mediática y efectos en comunidades enteras.</p>
+            </div>
+            <div class="card">
+                <h4>Tu tesis</h4>
+                <p>La financiación ilícita no solo sostiene la violencia: también amplifica procesos de victimización secundaria y revictimización.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cap2" class="section">
+        <h3>2. Marco teórico</h3>
+        <ul>
+            <li>Victimización directa, indirecta y secundaria.</li>
+            <li>Victimología del terrorismo.</li>
+            <li>Revictimización institucional y mediática.</li>
+            <li>Impacto social, emocional y comunitario del terrorismo.</li>
+        </ul>
+        <div class="box">
+            <strong>Idea guía:</strong> definir bien qué víctima estudias, qué tipo de daño y en qué momento del proceso.
+        </div>
+    </section>
+
+    <section id="cap3" class="section">
+        <h3>3. Financiación ilícita</h3>
+        <ul>
+            <li>Criptoactivos y transferencias opacas.</li>
+            <li>Crowdfunding y captación digital.</li>
+            <li>Redes informales de transferencia.</li>
+            <li>Uso instrumental de donantes y simpatizantes.</li>
+        </ul>
+        <div class="box">
+            <strong>Importante:</strong> no profundizar demasiado en la técnica operativa; céntrate en cómo esos mecanismos generan daño o facilitan daño a terceros.
+        </div>
+    </section>
+
+    <section id="cap4" class="section">
+        <h3>4. Impacto en víctimas</h3>
+        <div class="grid">
+            <div class="card">
+                <h4>Económico</h4>
+                <p>Costes, pérdida de ingresos, gastos médicos, trámites, desplazamientos y precarización de familiares.</p>
+            </div>
+            <div class="card">
+                <h4>Social</h4>
+                <p>Estigmatización, aislamiento, cambios en rutinas, miedo persistente y alteración del tejido comunitario.</p>
+            </div>
+            <div class="card">
+                <h4>Psicológico</h4>
+                <p>Trauma prolongado, ansiedad, duelo complejo y efectos de exposición repetida a contenido sobre el atentado.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cap5" class="section">
+        <h3>5. Dimensión digital</h3>
+        <ul>
+            <li>Exposición de víctimas en medios y redes.</li>
+            <li>Circulación de propaganda y odio.</li>
+            <li>Amplificación del daño por la huella digital.</li>
+            <li>Riesgo de revictimización por imágenes, nombres o narrativas.</li>
+        </ul>
+        <div class="box">
+            <strong>Enfoque:</strong> analizar cómo el entorno digital no solo informa del daño, sino que puede prolongarlo.
+        </div>
+    </section>
+
+    <section id="cap6" class="section">
+        <h3>6. OSINT</h3>
+        <div class="grid">
+            <div class="card">
+                <h4>Para qué sirve</h4>
+                <p>Observar huellas digitales, identificar patrones y detectar indicios de riesgo o de exposición de víctimas.</p>
+            </div>
+            <div class="card">
+                <h4>Cómo usarlo</h4>
+                <p>Como herramienta de análisis preventivo, no como investigación policial técnica ni como vigilancia masiva.</p>
+            </div>
+            <div class="card">
+                <h4>Límites</h4>
+                <p>Ética, legalidad, privacidad, sesgos y riesgo de sobreexposición de víctimas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cap7" class="section">
+        <h3>7. Conclusiones</h3>
+        <ul>
+            <li>La financiación ilícita tiene efectos victimológicos más amplios que el atentado en sí.</li>
+            <li>La victimización secundaria puede intensificarse en el espacio digital.</li>
+            <li>OSINT puede contribuir a prevención, análisis y protección.</li>
+            <li>El núcleo del trabajo es la víctima, no la operativa terrorista.</li>
+        </ul>
+        <div class="box">
+            <strong>Frase de defensa:</strong> “El terrorismo aparece como contexto criminológico; el análisis gira en torno a la victimización y la prevención”.
+        </div>
+    </section>
+</div>
+
+<script>
+function showSection(id, btn) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    document.querySelectorAll('.btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+}
+</script>
+
+</body>
+</html>
