@@ -3,203 +3,214 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TFM - Patricia Suárez Algora</title>
+<title>TFM - Victimización y financiación ilícita</title>
 
 <style>
-:root {
-    --primary: #1f6f8b;
-    --secondary: #c9a227;
-    --bg1: #0b1d26;
-    --bg2: #142f3a;
-    --card: #1c3b47;
-    --text: #eef4f7;
-    --muted: #b8c4cc;
+:root{
+    --primary:#1f3b73;
+    --secondary:#c9a227;
+    --bg:#0f1724;
+    --card:#162033;
+    --text:#e9eef7;
+    --muted:#b6c0d1;
 }
 
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    margin: 0;
-    min-height: 100vh;
+body{
+    margin:0;
+    font-family: "Georgia", "Times New Roman", serif;
+    background: var(--bg);
     color: var(--text);
-    background: linear-gradient(180deg, var(--bg1), var(--bg2));
 }
 
-/* HEADER */
-.hero {
-    padding: 50px 20px 30px;
-    text-align: center;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+/* CABECERA */
+header{
+    text-align:center;
+    padding:60px 20px 30px;
+    background: linear-gradient(135deg, #12213a, #0f1724);
+    border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
-.hero h1 {
-    margin: 0;
-    font-size: 2.3rem;
-    color: var(--primary);
-    letter-spacing: 0.5px;
-}
-
-.hero h2 {
-    margin: 15px auto 0;
-    max-width: 950px;
-    font-size: 1.1rem;
-    color: var(--muted);
-    font-weight: 400;
-    line-height: 1.6;
-}
-
-.badge {
-    display: inline-block;
-    margin-top: 18px;
-    padding: 7px 14px;
-    border-radius: 20px;
-    background: rgba(201,162,39,0.15);
+header h1{
+    margin:0;
+    font-size:2.2rem;
     color: var(--secondary);
-    font-weight: 600;
+    letter-spacing:0.5px;
 }
 
-/* CONTENEDOR */
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 25px 18px 50px;
+header p{
+    max-width:900px;
+    margin:15px auto 0;
+    color: var(--muted);
+    font-size:1.05rem;
+    line-height:1.6;
+}
+
+.author{
+    margin-top:18px;
+    font-weight:bold;
+    color:#ffffff;
 }
 
 /* MENÚ */
-.menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 25px;
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    padding:20px;
 }
 
-.btn {
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 10px;
-    padding: 10px 14px;
-    cursor: pointer;
-    color: var(--text);
-    background: rgba(255,255,255,0.04);
-    transition: 0.25s;
-    font-size: 0.95rem;
+nav button{
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.2);
+    color:var(--text);
+    padding:10px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
 }
 
-.btn:hover, .btn.active {
-    background: var(--primary);
-    transform: translateY(-2px);
+nav button:hover{
+    background:var(--primary);
+    border-color:var(--primary);
 }
 
-/* SECCIONES */
-.section {
-    display: none;
-    background: rgba(28,59,71,0.85);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 14px;
-    padding: 25px;
-    margin-bottom: 20px;
+/* CONTENIDO */
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
 }
 
-.section.active {
-    display: block;
-    animation: fade 0.3s ease;
+.section{
+    display:none;
+    background: var(--card);
+    padding:25px;
+    border-radius:10px;
+    margin-bottom:20px;
+    border:1px solid rgba(255,255,255,0.08);
 }
 
-@keyframes fade {
-    from {opacity: 0; transform: translateY(10px);}
-    to {opacity: 1; transform: translateY(0);}
+.section.active{
+    display:block;
 }
 
-/* TITULOS */
-h3 {
+h2{
     color: var(--secondary);
-    margin-top: 0;
-    border-bottom: 1px solid rgba(201,162,39,0.3);
-    padding-bottom: 8px;
+    margin-top:0;
+    border-bottom:1px solid rgba(255,255,255,0.15);
+    padding-bottom:8px;
 }
 
-h4 {
-    color: var(--text);
-}
-
-/* TEXTO */
-p, li {
-    color: var(--muted);
-    line-height: 1.7;
+p, li{
+    color:var(--muted);
+    line-height:1.7;
 }
 
 /* CAJAS */
-.box {
-    margin-top: 15px;
-    padding: 14px;
-    background: rgba(255,255,255,0.05);
-    border-left: 4px solid var(--secondary);
-    border-radius: 10px;
+.box{
+    margin-top:15px;
+    padding:15px;
+    border-left:4px solid var(--secondary);
+    background:rgba(255,255,255,0.03);
 }
 
-/* GRID */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 12px;
-}
-
-.card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 12px;
-    padding: 15px;
+/* BOTÓN ACTIVO */
+.active-btn{
+    background:var(--primary);
+    border-color:var(--primary);
 }
 </style>
 </head>
 
 <body>
 
-<header class="hero">
-    <h1>TFM - Victimización y financiación ilícita</h1>
-    <h2>Victimización indirecta y secundaria derivada de la financiación ilícita del terrorismo yihadista: análisis victimológico con enfoque económico, social y digital apoyado en OSINT</h2>
-    <div class="badge">Patricia Suárez Algora</div>
+<header>
+    <h1>TFM</h1>
+    <p>
+        Victimización indirecta y secundaria derivada de la financiación ilícita del terrorismo yihadista: 
+        análisis victimológico del impacto económico, social y digital con apoyo de OSINT
+    </p>
+    <div class="author">Patricia Suárez Algora</div>
 </header>
+
+<nav>
+    <button onclick="show('i', this)">Inicio</button>
+    <button onclick="show('p', this)">Planteamiento</button>
+    <button onclick="show('m', this)">Marco teórico</button>
+    <button onclick="show('f', this)">Financiación</button>
+    <button onclick="show('v', this)">Víctimas</button>
+    <button onclick="show('o', this)">OSINT</button>
+    <button onclick="show('c', this)">Conclusiones</button>
+</nav>
 
 <div class="container">
 
-<div class="menu">
-    <button class="btn active" onclick="showSection('inicio', this)">Inicio</button>
-    <button class="btn" onclick="showSection('cap1', this)">Planteamiento</button>
-    <button class="btn" onclick="showSection('cap2', this)">Marco teórico</button>
-    <button class="btn" onclick="showSection('cap3', this)">Financiación</button>
-    <button class="btn" onclick="showSection('cap4', this)">Impacto</button>
-    <button class="btn" onclick="showSection('cap5', this)">Digital</button>
-    <button class="btn" onclick="showSection('cap6', this)">OSINT</button>
-    <button class="btn" onclick="showSection('cap7', this)">Conclusiones</button>
-</div>
-
-<!-- INICIO -->
-<section id="inicio" class="section active">
-<h3>Idea central</h3>
-<p>La financiación ilícita del terrorismo no solo sostiene la violencia, sino que amplifica procesos de victimización indirecta, secundaria y digital.</p>
-
+<section id="i" class="section active">
+<h2>Idea central</h2>
+<p>
+El terrorismo no solo genera víctimas directas. La financiación ilícita amplifica daños
+económicos, sociales y digitales que afectan a comunidades enteras.
+</p>
 <div class="box">
-<strong>Clave:</strong> la víctima es el eje; el terrorismo es el contexto.
+La víctima es el eje del análisis; la financiación ilícita es el mecanismo.
 </div>
 </section>
 
-<!-- RESTO IGUAL (no te lo corto para no liarte) -->
-<section id="cap1" class="section"><h3>Planteamiento</h3><p>...contenido...</p></section>
-<section id="cap2" class="section"><h3>Marco teórico</h3><p>...contenido...</p></section>
-<section id="cap3" class="section"><h3>Financiación ilícita</h3><p>...contenido...</p></section>
-<section id="cap4" class="section"><h3>Impacto</h3><p>...contenido...</p></section>
-<section id="cap5" class="section"><h3>Dimensión digital</h3><p>...contenido...</p></section>
-<section id="cap6" class="section"><h3>OSINT</h3><p>...contenido...</p></section>
-<section id="cap7" class="section"><h3>Conclusiones</h3><p>...contenido...</p></section>
+<section id="p" class="section">
+<h2>Planteamiento</h2>
+<p>
+Se estudia cómo la financiación ilícita del terrorismo impacta más allá del atentado,
+generando victimización secundaria y efectos prolongados.
+</p>
+</section>
+
+<section id="m" class="section">
+<h2>Marco teórico</h2>
+<ul>
+<li>Victimización directa e indirecta</li>
+<li>Victimología del terrorismo</li>
+<li>Revictimización institucional</li>
+<li>Impacto social y digital</li>
+</ul>
+</section>
+
+<section id="f" class="section">
+<h2>Financiación ilícita</h2>
+<ul>
+<li>Criptoactivos</li>
+<li>Redes informales</li>
+<li>Transferencias digitales opacas</li>
+</ul>
+</section>
+
+<section id="v" class="section">
+<h2>Impacto en víctimas</h2>
+<p>Efectos económicos, psicológicos y sociales derivados del terrorismo.</p>
+</section>
+
+<section id="o" class="section">
+<h2>OSINT</h2>
+<p>Herramienta de análisis para identificar huellas digitales y patrones de riesgo.</p>
+</section>
+
+<section id="c" class="section">
+<h2>Conclusiones</h2>
+<p>
+El impacto del terrorismo se amplifica en el entorno digital y financiero,
+y la víctima debe ser el centro del análisis criminológico.
+</p>
+</section>
 
 </div>
 
 <script>
-function showSection(id, btn){
+function show(id, btn){
     document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
     document.getElementById(id).classList.add('active');
-    document.querySelectorAll('.btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
+
+    document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active-btn'));
+    btn.classList.add('active-btn');
 }
 </script>
 
